@@ -3,8 +3,10 @@
 Painel administrativo para gerenciar clientes e jogadores de CS2.
 Interface intuitiva, com tabelas estilizadas, botões interativos e cores escuras.
 
-💾 Banco de Dados
-Clientes
+💾 Banco de Dados (Você também pode importar o arquivo .sql):
+
+Clientes:
+
 CREATE TABLE clientes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -12,7 +14,8 @@ CREATE TABLE clientes (
     estado VARCHAR(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-Jogadores
+Jogadores: 
+
 CREATE TABLE jogadores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nick VARCHAR(100) NOT NULL,
