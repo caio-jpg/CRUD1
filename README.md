@@ -1,8 +1,10 @@
 🎮 CRUD de Clientes e Jogadores (CS2)
 
-Painel administrativo simples para gerenciar clientes e jogadores de CS2, construído com PHP, MySQL e HTML/CSS.
+Painel administrativo para gerenciar clientes e jogadores de CS2.
+Interface intuitiva, com tabelas estilizadas, botões interativos e cores escuras.
 
 💾 Banco de Dados
+Clientes
 CREATE TABLE clientes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -10,6 +12,7 @@ CREATE TABLE clientes (
     estado VARCHAR(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+Jogadores
 CREATE TABLE jogadores (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nick VARCHAR(100) NOT NULL,
@@ -19,42 +22,49 @@ CREATE TABLE jogadores (
     pais VARCHAR(50)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+✅ ENGINE=InnoDB garante transações seguras e integridade dos dados.
+
 🛠️ Funcionalidades
-
-Clientes: cadastrar, listar, alterar, excluir
-
-Jogadores: cadastrar, listar, alterar, excluir
-
-Interface: tabelas estilizadas, botões interativos, hover, cores escuras
-
-🖥️ Arquivos principais
+Módulo	Funcionalidades
+Clientes	Cadastrar, listar, alterar e excluir
+Jogadores	Cadastrar, listar, alterar e excluir
+Interface	Tabelas estilizadas, botões interativos, hover, cores escuras
+🖥️ Estrutura de Arquivos
 /admin
 ├─ clientes-*.php       # CRUD de clientes
 ├─ jogadores-*.php      # CRUD de jogadores
 └─ config.inc.php       # Conexão com o banco
 
-🚀 Rodando o projeto
+🚀 Como Rodar
 
-Clone o projeto no htdocs do XAMPP
+Clone o projeto no htdocs do XAMPP:
 
-Crie o banco e as tabelas SQL acima
+git clone <seu-repo-aqui>
+
+
+Crie o banco de dados e execute os comandos SQL acima
 
 Configure config.inc.php:
 
 <?php
-$conexao = mysqli_connect("localhost","root","","projeto1") or die("Erro na conexão");
+$conexao = mysqli_connect("localhost", "root", "", "projeto1") 
+    or die("Erro na conexão");
 ?>
 
 
-Acesse no navegador:
+Abra no navegador:
+http://localhost/projeto1_cs2/index.php
 
-http://localhost/projeto1_cs2/index.php e navegue entre as abas intuitivas de jogadores e clientes
+🔹 Navegue entre as abas Clientes e Jogadores
 
 🎨 Estilo Visual
 
-Fundo escuro (#111) com texto amarelo (#FFD700)
+Fundo escuro: #111
 
-Botões arredondados com hover
+Texto em amarelo: #FFD700
+
+Botões arredondados com efeito hover
 
 Tabelas com linhas alternadas e destaque ao passar o mouse
 
@@ -62,7 +72,13 @@ Tabelas com linhas alternadas e destaque ao passar o mouse
 
 Upload de avatar para jogadores
 
+Busca e filtros nas tabelas
+
+Paginação para grandes volumes de dados
+
+Responsividade para mobile
 
 🖇️ Autor
 
-Caio Vinicius – Projeto de CRUD em PHP/MySQL
+Caio Vinicius – Estudo de CRUD em PHP/MySQL
+📍 Brasil
