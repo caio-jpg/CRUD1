@@ -1,14 +1,21 @@
 <?php
+include('config.inc.php');
 
-    require_once 'config.inc.php';
+$id = $_GET['id'] ?? 0;
 
-    $id = $_GET['id'];
-    $sql = "DELETE FROM clientes WHERE id = '$id'";
-
+if ($id) {
+    $sql = "DELETE FROM clientes WHERE id='$id'";
     if(mysqli_query($conexao, $sql)){
-        echo "<br><h2>Cliente Excluído com sucesso.</h2>";
-        echo "<a href='?pg=clientes-admin'>Voltar</a>";
-    }else{
-        echo "<br><h2>Erro ao excluir Cliente.</h2>";
-        echo "<a href='?pg=clientes-admin'>Voltar</a>";
+        echo "<h2>Cliente excluído com sucesso!</h2>";
+        echo "<a href='clientes-admin.php'>Voltar</a>";
+    } else {
+        echo "<h2>Erro ao excluir cliente: ".mysqli_error($conexao)."</h2>";
+        echo "<a href='clientes-admin.php'>Voltar</a>";
     }
+} else {
+    echo "<h2>ID inválido.</h2>";
+    echo "<a href='clientes-admin.php'>Voltar</a>";
+}
+
+mysqli_close($conexao);
+?>

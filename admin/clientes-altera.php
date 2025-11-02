@@ -1,20 +1,29 @@
 <?php
-    require_once 'config.inc.php';
+include('config.inc.php');
 
-    $id = $_POST['id'];
-    $nome = $_POST['cliente'];
-    $cidade = $_POST['cidade'];
-    $estado = $_POST['estado'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id = $_POST['id'] ?? 0;
+    $nome = $_POST['nome'] ?? '';
+    $cidade = $_POST['cidade'] ?? '';
+    $estado = $_POST['estado'] ?? '';
 
-    $sql = "UPDATE clientes SET cliente = '$nome',cidade = '$cidade',
-            estado = '$estado'
-            WHERE id = '$id'";
-
-
-    if($resultado = mysqli_query($conexao, $sql)){
-        echo "<br><h2>Cliente alterado com sucesso!";
-        echo "<a href='?pg=clientes-admin'>Voltar</a>";
-    }else{
-        echo "<br><h3>Erro ao alterar cliente</h3>";
-        echo "<a href='?pg=clientes-admin'>Voltar</a>";
+    if ($id && $nome && $cidade) {
+        $sql = "UPDATE clientes SET nome='$nome', cidade='$cidade', estado='$estado' WHERE id='$id'";
+        if(mysqli_query($conexao, $sql)){
+            echo "<h2>Cliente alterado com sucesso!</h2>";
+            echo "<a href='clientes-admin.php'>Voltar</a>";
+        } else {
+            echo "<h2>Erro ao alterar cliente: ".mysqli_error($conexao)."</h2>";
+            echo "<a href='clientes-admin.php'>Voltar</a>";
+        }
+    } else {
+        echo "<h2>Erro: Dados inválidos.</h2>";
+        echo "<a href='clientes-admin.php'>Voltar</a>";
     }
+} else {
+    echo "<h2>Erro: Formulário não enviado corretamente.</h2>";
+    echo "<a href='clientes-admin.php'>Voltar</a>";
+}
+
+mysqli_close($conexao);
+?>
