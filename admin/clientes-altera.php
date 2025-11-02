@@ -18,5 +18,3 @@
         echo "<br><h3>Erro ao alterar cliente</h3>";
         echo "<a href='?pg=clientes-admin'>Voltar</a>";
     }
-
-

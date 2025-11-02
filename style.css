@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
 
-;root {
+:root {
     --bg-dark: #0e0e0e;
     --bg-panel: #1a1a1a;
     --accent: #d4af37;
@@ -16,7 +16,7 @@
     font-family: 'Rajdhani', sans-serif;
 }
 
-body {
+html, body {
     background-color: var(--bg-dark);
     color: var(--text-light);
     min-height: 100vh;
@@ -60,11 +60,9 @@ nav a:hover {
 }
 
 /* ===== Conteúdo ===== */
-main {
-    max-width: 1000px;
-    margin: 30px auto;
-    padding: 20px;
+main, section, div, article {
     background-color: var(--bg-panel);
+    color: var(--text-light);
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }

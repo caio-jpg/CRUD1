@@ -5,8 +5,9 @@ echo "<h3>Menu do site</h3>";
     <ul class="menu">
         <li><a href="index.php">Home</a></li>
         <li><a href="?pg=quemsomos">Quem Somos</a></li>
-        <li><a href="?pg=clientes">Clientes</a></li>
+        <li><a href="admin/clientes-cadastro-form.php">Clientes</a></li>
         <li><a href="?pg=faleconosco">Contato</a></li>
+         <li><a href="admin/jogadores-cadastro-form.php">Jogadores</a></li>
     </ul>
 </nav>
 

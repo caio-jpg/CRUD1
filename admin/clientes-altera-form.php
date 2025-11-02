@@ -31,5 +31,3 @@
         echo "<br><h2>Nenhum cliente encontrado</h2>";
     }
 ?>
-
-
