@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        h3{
-            color: blue;
-        }
-    </style>
+    <title>Painel CS2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <?php
-
-    echo "<h1>Topo do site.</h1>";
+    echo "<header class='site-header'>";
+    echo "<h1>Painel CS2</h1>";
+    echo "</header>";
+?>
